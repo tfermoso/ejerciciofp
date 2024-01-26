@@ -1,4 +1,4 @@
-package utils;
+
 public enum Provincia {
     ALAVA("01"),
     ALBACETE("02"),
@@ -59,6 +59,15 @@ public enum Provincia {
 
     public String getCodigo() {
         return codigo;
+    }
+    public static Provincia get(String valor){
+        for(Provincia provincia: Provincia.values()){
+            if(valor.equals(provincia.codigo) ){
+                return provincia;
+            }
+        }
+        return Provincia.valueOf(valor.toUpperCase());
+
     }
 
 }

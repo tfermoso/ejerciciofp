@@ -1,5 +1,5 @@
-package utils;
 
+package utils;
 
 public enum Bank {
     BANCO_ALCALA("ALCLESMMXXX", "0188", "BANCO ALCALA, S.A."),
@@ -97,5 +97,19 @@ public enum Bank {
     
     public String swift() {
         return bic;
+    }
+
+    public static Bank get(String codigo){
+        for (Bank bank:Bank.values()){
+            if(codigo.equals(bank.codigo)){
+                return bank;
+            }
+        }
+        return Bank.UNKNOWN_BANK;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + codigo + "]" +" "+ nombre;
     }
 }

@@ -222,6 +222,29 @@ public enum Country {
     public String phonePrefix() {
         return "+"+code;
     }
-    
+
+    public static Country get(String codigoISO){
+        Country[] countries= Country.values();
+        for(Country country : countries){
+            if(codigoISO.equals(country.codigoISO)){
+                return country;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+    public static Country get(int code){
+        Country[] countries= Country.values();
+        for(Country country : countries){
+            if(code==country.code){
+                return country;
+            }
+        }
+        throw new IllegalArgumentException();
+    }
+
+    @Override
+    public String toString() {
+        return "nombre del pais: " + nombre;
+    }
 }
 
