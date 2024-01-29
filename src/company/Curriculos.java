@@ -1,5 +1,6 @@
 package company;
 
+
 import utils.Nif;
 import utils.Storage;
 import utils.StorageException;
@@ -18,7 +19,7 @@ public class Curriculos extends Storage {
     }
    
     public void del(Candidato t) throws StorageException {
-        del(t.dni);
+        del(t.getDni());
     }
     
     /**
@@ -28,13 +29,13 @@ public class Curriculos extends Storage {
      */
     public void add(Object t) throws StorageException {
         Candidato c=(Candidato) t;
-        if (position(c.dni)>=0) throw new StorageException("Object Exists");
+        if (position(c.getDni())>=0) throw new StorageException("Object Exists");
         super.add(t);
     }
     
      /**
      * Actualiza o Candidato data si existe ou lanza unha StorageException si non existe
-     * @param key
+     * @param data
      * @throws StorageException 
      */
     public void update(Object data) throws StorageException {

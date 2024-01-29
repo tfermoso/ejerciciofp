@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import utils.CancelException;
 import utils.Filter;
 import utils.Iban;
-//import utils.NSS;
+import utils.NSS;
 import utils.Nif;
 
 
@@ -46,7 +46,7 @@ public class Input extends utils.Input {
            @Override 
            public boolean isValid(Object obj) {
                String str=(String) obj;
-               return NSS.checkNSS(str)!=null;
+               return NSS.checkNSS(str);
            } 
         });
     }

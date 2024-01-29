@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 public class Sheets {
     public static void workerSheet(Traballador t) {
         curriculumSheet(t);
-        System.out.println("Numero de Seguridade Social: "+t.getNSS());
+        System.out.println("Numero de Seguridade Social: "+t.getNss());
         System.out.println("Conta Bancaria: "+t.getIban()+" ["+t.getIban().getBank()+"]");
         System.out.println("Data de Alta: "+t.getDataAlta().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
         System.out.printf("Salario Mensual: %.4f",t.getSalario());

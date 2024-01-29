@@ -53,7 +53,7 @@ public class Iban {
     
     @Override
     public String toString() {
-        return iban+" ["+getBank()+"]";
+        return iban;//+" ["+getBank()+"]";
     }
 
     public static Iban from(String ibanstr) {

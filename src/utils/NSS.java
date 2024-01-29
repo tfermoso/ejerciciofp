@@ -19,6 +19,23 @@ public class NSS {
         }
 
     }
+
+    public static boolean checkNSS(String numss) {
+        int digitos_control;
+        Long numero;
+        try {
+            numero = Long.valueOf(numss.substring(0, 10));
+            digitos_control = Integer.valueOf(numss.substring(10));
+            if(numero%97==digitos_control){
+              return true;
+            }else{
+                throw new IllegalArgumentException();
+            }
+        }catch (Exception e){
+            throw new IllegalArgumentException();
+        }
+    }
+
     public String control(){
         return numss.substring(10);
     }
