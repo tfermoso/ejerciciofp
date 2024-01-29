@@ -1,4 +1,4 @@
-
+package utils;
 public enum Provincia {
     ALAVA("01"),
     ALBACETE("02"),
